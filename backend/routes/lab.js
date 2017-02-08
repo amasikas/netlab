@@ -6,7 +6,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'saki异次元' });
+    res.render('index.html');
 });
 
 module.exports = router;
