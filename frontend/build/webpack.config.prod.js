@@ -14,7 +14,8 @@ module.exports = {
     output: {
         path: path.resolve(consts.DIST),
         publicPath: '/',
-        filename: '[chunkhash].[name].js'
+        filename: '[chunkhash].[name].js',
+        chunkFilename: '[name].[chunkhash:5].min.js'
     },
     module: {
         rules: [{

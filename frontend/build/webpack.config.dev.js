@@ -20,7 +20,9 @@ module.exports = {
     },
     output: {
         path: path.resolve(consts.DIST),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/',
+        chunkFilename: '[name].[chunkhash:5].min.js'
     },
     module: {
         loaders: [
@@ -44,5 +46,6 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin()
     ]
 }

@@ -4,12 +4,10 @@
  */
 import React from 'react'
 import {render} from 'react-dom'
-import {Router, Route, hashHistory} from 'react-router'
-import App from './specific/layout'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import route from './router/index'; //路由配置
 
-render((
-    <Router history={hashHistory}>
-        <Route path="/" component={App}></Route>
-        <Route path="/about" component={About}/>
-    </Router>
-), document.getElementById('app'));
+
+render((route)
+, document.getElementById('app'));
