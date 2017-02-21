@@ -17,7 +17,7 @@ const store = createStore(initialState);
 
 render(
     <Provider store={store}>
-        (route)
+        {route}
     </Provider>
 , document.getElementById('app'));
 
