@@ -7,6 +7,8 @@ const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
+const __DEV__ = true;
+
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
@@ -46,6 +48,5 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
     ]
 }

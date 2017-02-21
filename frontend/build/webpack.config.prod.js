@@ -7,6 +7,9 @@ const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
+const __PROD__ = false;
+
+
 module.exports = {
     entry: {
         main: path.resolve(consts.ENTRY)
