@@ -5,7 +5,9 @@ const config = require('./utils/webpack.config.base');
 const consts = require('./utils/consts');
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+
 
 const __PROD__ = false;
 
@@ -34,6 +36,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            filename: '../../../views/index.html'
+
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor']
         }),
