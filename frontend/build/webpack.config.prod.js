@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(consts.DIST),
-        publicPath: '/lab/',
+        publicPath: '/lab/javascripts/',
         filename: '[chunkhash].[name].js',
         chunkFilename: '[name].[chunkhash:5].min.js'
     },
@@ -38,7 +38,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: '../../../views/index.html',
-            template: './backend/views/index.ejs'
+            template: './backend/views/index.ejs',
+            hash: true
 
         }),
         new webpack.optimize.CommonsChunkPlugin({
