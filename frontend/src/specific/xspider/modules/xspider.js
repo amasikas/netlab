@@ -1,6 +1,7 @@
 /**
  * Created by saki on 2017/2/22.
  */
+import 'whatwg-fetch';
 
 // ------------------------------------
 // Constants
@@ -10,14 +11,24 @@ export const XSPIDER_CHANGE_SEARCH_KEY = 'XSPIDER_CHANGE_SITE';
 
 export const search = () => {
     return (dispatch, getState) => {
+
+
         return new Promise((resolve) => {
-            setTimeout(() => {
+            let url = '/search';
+            fetch('/lab/api/search', {
+                method: 'GET',
+                body: {
+                    searchKey: getState().searchKey
+                }
+            }).then(function (response) {
                 dispatch({
                     type: XSPIDER_SEARCH,
-                    payload: getState().xspider.searchResults
+                    results: [1, 2, 3, 4]
                 });
-                resolve()
-            }, 200)
+                resolve();
+            }).catch(function (ex) {
+                console.log('parsing failed', ex)
+            });
         })
     }
 }
@@ -38,7 +49,9 @@ export const actions = {
 // ------------------------------------
 const ACTION_HANDLERS = {
     [XSPIDER_SEARCH]: (state, action) => {
-        return state
+        return Object.assign({}, state, {
+            results: action.results
+        })
     },
     [XSPIDER_CHANGE_SEARCH_KEY]: (state, action) => {
         return Object.assign({}, state, {

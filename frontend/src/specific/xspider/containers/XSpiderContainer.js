@@ -3,12 +3,15 @@
  */
 import {connect} from 'react-redux'
 import XSpider from '../components/index.js'
-import {changeSearchKey} from '../modules/xspider.js'
+import {changeSearchKey, search} from '../modules/xspider.js'
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         handleChangeResult: (sKey) => {
             dispatch(changeSearchKey(sKey))
+        },
+        handleClick: ()=>{
+            dispatch(search())
         }
     }
 }

@@ -11,8 +11,6 @@ class SearchBar extends Component{
     }
 
     handleChangeResult(event){
-        console.log("input change");
-        console.log(event.target.value);
         this.props.handleChangeResult(event.target.value);
     }
 

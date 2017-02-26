@@ -8,7 +8,6 @@ import locationReducer from './location'
 * 合并各个reducer
 * */
 export const makeRootReducer = (asyncReducers) => {
-    console.log("get_makeRootReducer");
     return combineReducers({
         location: locationReducer,
         ...asyncReducers
