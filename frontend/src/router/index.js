@@ -4,30 +4,44 @@
 import React from 'react'
 import {render} from 'react-dom'
 import {Router, Route, hashHistory, IndexRoute} from 'react-router'
+import {injectReducer} from '../store/reducers'
 
 import App from '../specific/App'
 
-const test = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../common/test').default)
-    }, 'test')
+const test = (store) => {
+    return (location, cb) => {
+        require.ensure([], require => {
+            cb(null, require('../common/test').default)
+        }, 'test')
+    }
 }
 
-const  xspider = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../specific/xspider').default)
-    }, 'xspider')
+
+const xspider = (store) => {
+    return (location, cb) => {
+        require.ensure([], require => {
+            const Xspider = require('../specific/xspider/containers/XSpiderContainer.js').default;
+
+            const reducer = require('../specific/xspider/modules/xspider.js').default;
+
+            injectReducer(store, {key: 'xspider', reducer});
+            cb(null, Xspider)
+        }, 'xspider')
+    }
 }
 
-const RouterConfig = (
-    <Router history={hashHistory}>
+const RouterConfig = (store) => {
+    const comTest = test(store);
+    const comXSpider = xspider(store);
+    return (
+        <Router history={hashHistory}>
 
-        <Route path="/" component={App}>
-            <Route path="test" getComponent={test}/> //测试
-            <Route path="xspider" getComponent={xspider} /> //爬虫系列
-        </Route>
+            <Route path="/" component={App}>
+                <Route path="test" getComponent={comTest}/> //测试
+                <Route path="xspider" getComponent={comXSpider}/> //爬虫系列
+            </Route>
 
-    </Router>
-)
-
+        </Router>
+    )
+}
 export default RouterConfig

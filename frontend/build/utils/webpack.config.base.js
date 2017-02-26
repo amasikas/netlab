@@ -6,6 +6,8 @@ const webpack = require('webpack');
 const consts = require('./consts');
 const path = require('path');
 
+
+
 const config = {
     module:{
         rules:[{

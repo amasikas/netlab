@@ -8,6 +8,7 @@ import locationReducer from './location'
 * 合并各个reducer
 * */
 export const makeRootReducer = (asyncReducers) => {
+    console.log("get_makeRootReducer");
     return combineReducers({
         location: locationReducer,
         ...asyncReducers
@@ -19,6 +20,7 @@ export const makeRootReducer = (asyncReducers) => {
 * */
 export const injectReducer = (store, { key, reducer }) => {
     store.asyncReducers[key] = reducer;
+
     store.replaceReducer(makeRootReducer(store.asyncReducers))
 }
 

@@ -3,7 +3,9 @@
  */
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
+import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
+import { updateLocation } from './location'
 
 export default (initialState = {}) => {
     // ======================================================
@@ -14,12 +16,11 @@ export default (initialState = {}) => {
     // ======================================================
     // Store Enhancers
     // ======================================================
+
     const enhancers = [];
-    if (__DEV__) {
-        const devToolsExtension = window.devToolsExtension;
-        if (typeof devToolsExtension === 'function') {
-            enhancers.push(devToolsExtension())
-        }
+
+    if(__DEV__){
+        enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
     }
 
     const store = createStore(
@@ -31,6 +32,8 @@ export default (initialState = {}) => {
         )
     );
 
+    store.asyncReducers = {};
 
+    store.unsubscribeHistory = browserHistory.listen(updateLocation(store));
     return store
 }

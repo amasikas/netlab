@@ -1,15 +1,20 @@
 /**
  * Created by saki on 2017/2/9.
  */
+
 const config = require('./utils/webpack.config.base');
 const consts = require('./utils/consts');
+
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
-const __DEV__ = true;
 
-module.exports = {
+console.log("===============develop================");
+
+
+const webpackConfig = {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
         historyApiFallback: true,
@@ -45,8 +50,15 @@ module.exports = {
                 'css-loader'
             ]
         }
-        ]
+        ],
     },
-    plugins: [
-    ]
 }
+
+// ------------------------------------
+// Plugins
+// ------------------------------------
+webpackConfig.plugins = [
+]
+
+
+module.exports = webpackConfig;

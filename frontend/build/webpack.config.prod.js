@@ -9,6 +9,7 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 const __PROD__ = false;
 
+console.log("============++++++++++++");
 
 module.exports = {
     entry: {
@@ -37,7 +38,7 @@ module.exports = {
             names: ['vendor']
         }),
         new UglifyJsPlugin({
-            beautify: true,
+            beautify: false,
             comments: false,
             compress: {
                 warnings: false,
@@ -46,6 +47,9 @@ module.exports = {
                 reduce_vars: true
             },
             sourceMap: false
+        }),
+        new webpack.DefinePlugin({
+            __DEV__: 'false'
         })
     ]
 }
