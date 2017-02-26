@@ -37,7 +37,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: '../../../views/index.html'
+            filename: '../../../views/index.html',
+            template: './backend/views/index.ejs'
 
         }),
         new webpack.optimize.CommonsChunkPlugin({
