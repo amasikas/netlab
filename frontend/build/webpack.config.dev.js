@@ -20,8 +20,18 @@ const webpackConfig = {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        contentBase: consts.SRC
+        contentBase: consts.SRC,
+        port: 7070,
+        proxy: {
+            "/lab/*": {
+                target: "http://localhost:3000",
+                changeOrigin: true,
+                secure: false
+            }
+
+        }
     },
+
     entry: {
         main: path.resolve(consts.ENTRY)
     },

@@ -9,4 +9,8 @@ router.get('/', function(req, res, next) {
     res.render('index.html');
 });
 
+router.get('/api/search', function(req, res, next){
+    res.json({'err':0, 'msg': 'test'});
+});
+
 module.exports = router;

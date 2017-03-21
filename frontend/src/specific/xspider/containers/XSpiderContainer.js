@@ -17,8 +17,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log("map:");
-    console.log(state);
     return {
         searchKey: state.xspider.searchKey
     }

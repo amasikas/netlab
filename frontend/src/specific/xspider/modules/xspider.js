@@ -2,6 +2,7 @@
  * Created by saki on 2017/2/22.
  */
 import 'whatwg-fetch';
+import {xspider} from '../../../config/url.js'
 
 // ------------------------------------
 // Constants
@@ -12,13 +13,15 @@ export const XSPIDER_CHANGE_SEARCH_KEY = 'XSPIDER_CHANGE_SITE';
 export const search = () => {
     return (dispatch, getState) => {
 
-
         return new Promise((resolve) => {
-            let url = '/search';
-            fetch('/lab/api/search', {
+
+            let searchKey = getState().xspider.searchKey;
+            let searchUrl = xspider.search;
+            let url = `${searchUrl}?searchKey=${searchKey}`;
+            fetch(url, {
                 method: 'GET',
-                body: {
-                    searchKey: getState().searchKey
+                headers: {
+                    'Cache-Control': 'no-cache'
                 }
             }).then(function (response) {
                 dispatch({

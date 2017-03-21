@@ -21,9 +21,7 @@ render(
         {route}
     </Provider>
 , document.getElementById('app'));
-if(DEV){
-    alert("go");
-}
+
 
 // ========================================================
 // Developer Tools Setup
