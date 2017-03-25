@@ -18,6 +18,6 @@ from django.contrib import admin
 from netlab import views
 
 urlpatterns = [
-    url(r'^lab/', views.index, name='index'),
+    url(r'^lab/$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
 ]
