@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(consts.DIST),
-        publicPath: '/lab/javascripts/',
+        publicPath: '/static/lab/js/',
         filename: '[chunkhash].[name].js',
         chunkFilename: '[name].[chunkhash:5].min.js'
     },
@@ -38,6 +38,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: '../../../netlab/templates/index.html',
+            template: path.resolve(consts.SRC,'./views_tmpl/index.html'),
             hash: true
 
         }),

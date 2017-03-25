@@ -25,7 +25,7 @@ SECRET_KEY = '_5lq*@n9*gv+1s4mq1#k8r4$h#g!=)w*ywjf_o(w_cqpajcjf-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['112.74.167.158', '*.sakisama.top']
+ALLOWED_HOSTS = ['127.0.0.1', '112.74.167.158', 'www.sakisama.top']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'netlab'
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "./static"),
+]
