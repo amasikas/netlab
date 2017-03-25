@@ -25,7 +25,7 @@ SECRET_KEY = '_5lq*@n9*gv+1s4mq1#k8r4$h#g!=)w*ywjf_o(w_cqpajcjf-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['112.74.167.158', '*.sakisama.top']
 
 
 # Application definition
