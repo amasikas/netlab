@@ -1,10 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>lab</title>
-</head>
-<body>
-    <div id="app"></div>
-<script type="text/javascript" src="/lab/javascripts/bab27f6c8bce3eeacc7b.vendor.js?061e32d78662d3fb5720"></script><script type="text/javascript" src="/lab/javascripts/35918aacac2ca1e0ac8b.main.js?061e32d78662d3fb5720"></script></body>
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Entry module not found: Error: Can't resolve '/Users/saki/work/netlab/frontend/backend/views/index.ejs' in '/Users/saki/work/netlab/frontend':
+  Error: Can't resolve '/Users/saki/work/netlab/frontend/backend/views/index.ejs' in '/Users/saki/work/netlab/frontend'
+  
+  - compiler.js:76 
+    [frontend]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:280 Compiler.<anonymous>
+    [frontend]/[webpack]/lib/Compiler.js:280:10
+  
+  - Compiler.js:480 
+    [frontend]/[webpack]/lib/Compiler.js:480:13
+  
+  - Tapable.js:138 next
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:138:11
+  
+  - CachePlugin.js:62 Compiler.<anonymous>
+    [frontend]/[webpack]/lib/CachePlugin.js:62:5
+  
+  - Tapable.js:142 Compiler.applyPluginsAsyncSeries
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:142:13
+  
+  - Compiler.js:477 
+    [frontend]/[webpack]/lib/Compiler.js:477:10
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:640 self.applyPluginsAsync.err
+    [frontend]/[webpack]/lib/Compilation.js:640:19
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:631 self.applyPluginsAsync.err
+    [frontend]/[webpack]/lib/Compilation.js:631:11
+  
+  - Tapable.js:138 next
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:138:11
+  
+  - UglifyJsPlugin.js:140 Compilation.compilation.plugin
+    [frontend]/[webpack]/lib/optimize/UglifyJsPlugin.js:140:5
+  
+  - Tapable.js:140 next
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:140:14
+  
+  - UglifyJsPlugin.js:140 Compilation.compilation.plugin
+    [frontend]/[webpack]/lib/optimize/UglifyJsPlugin.js:140:5
+  
+  - Tapable.js:142 Compilation.applyPluginsAsyncSeries
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:142:13
+  
+  - Compilation.js:626 self.applyPluginsAsync.err
+    [frontend]/[webpack]/lib/Compilation.js:626:10
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:622 sealPart2
+    [frontend]/[webpack]/lib/Compilation.js:622:9
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:570 Compilation.seal
+    [frontend]/[webpack]/lib/Compilation.js:570:8
+  
+  - Compiler.js:474 
+    [frontend]/[webpack]/lib/Compiler.js:474:16
+  
+  - Tapable.js:225 
+    [frontend]/[webpack]/[tapable]/lib/Tapable.js:225:11
+  
+  - Compilation.js:472 _addModuleChain
+    [frontend]/[webpack]/lib/Compilation.js:472:11
+  
+  - Compilation.js:365 Compilation.errorAndCallback
+    [frontend]/[webpack]/lib/Compilation.js:365:4
+  
+  - Compilation.js:382 moduleFactory.create
+    [frontend]/[webpack]/lib/Compilation.js:382:12
+  
+  - NormalModuleFactory.js:234 
+    [frontend]/[webpack]/lib/NormalModuleFactory.js:234:19
+  
+  - NormalModuleFactory.js:59 onDoneResolving
+    [frontend]/[webpack]/lib/NormalModuleFactory.js:59:20
+  
+  - NormalModuleFactory.js:126 
+    [frontend]/[webpack]/lib/NormalModuleFactory.js:126:20
+  
+  - async.js:3694 
+    [frontend]/[webpack]/[async]/dist/async.js:3694:9
+  
+</pre><script type="text/javascript" src="/lab/javascripts/2d14f08ca9a2f3a5e666.vendor.js?6a615f656bc198adeb2b"></script><script type="text/javascript" src="/lab/javascripts/987b42c498a0cf100ecb.main.js?6a615f656bc198adeb2b"></script>

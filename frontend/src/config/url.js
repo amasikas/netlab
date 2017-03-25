@@ -3,9 +3,11 @@
  */
 
 let prefix = '/lab';
-if(__DEV__){
-    prefix=''
-}
+
+//
+// if(__DEV__){
+//     prefix='/lab'
+// }
 
 export let xspider = {
     'search': `${prefix}/api/search/`

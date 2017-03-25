@@ -37,8 +37,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: '../../../views/index.html',
-            template: './backend/views/index.ejs',
+            filename: '../../../netlab/templates/index.html',
             hash: true
 
         }),
