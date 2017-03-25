@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(consts.DIST),
-        publicPath: '/static/lab/js/',
+        publicPath: '/lab/static/js/',
         filename: '[chunkhash].[name].js',
         chunkFilename: '[name].[chunkhash:5].min.js'
     },
