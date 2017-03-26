@@ -11,8 +11,6 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 const __PROD__ = false;
 
-console.log("============++++++++++++");
-
 module.exports = {
     entry: {
         main: path.resolve(consts.ENTRY)
@@ -37,7 +35,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: '../../../netlab/templates/index.html',
+            filename: '../../netlab/templates/index.html',
             template: path.resolve(consts.SRC,'./views_tmpl/index.html'),
             hash: true
 
