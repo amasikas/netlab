@@ -10,5 +10,5 @@ let prefix = '/lab';
 // }
 
 export let xspider = {
-    'search': `${prefix}/api/search/`
+    'search': `${prefix}/xspider/api/search/`
 }
