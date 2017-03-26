@@ -4,7 +4,7 @@
 const PORT = 84;
 const ENTRY = 'src/entry.js';
 const SRC = 'src';
-const DIST = '../backend/assets/js';
+const DIST = '../backend/static/js';
 const CDN = '/dist/';
 
 module.exports = {
